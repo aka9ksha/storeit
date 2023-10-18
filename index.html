@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Usha Mittal Institute of Technology</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="uni-logo.webp" alt="">
+        <h1>Welcome to Usha Mittal Institute of Technology</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About Us</a></li>
+                <li><a href="#courses" onclick="scrollToSection('courses')">Courses</a></li>
+                <li><a href="#admissions" onclick="scrollToSection('admissions')">Admissions</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-up-long"></i></button>
+
+    <section id="home">
+        <h2>Welcome to Usha Mittal Institute of Technology</h2>
+        <p>Empowering the future through education and innovation.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Usha Mittal Institute of Technology is a leading institution dedicated to providing high-quality education in
+            the field of technology and engineering.</p>
+    </section>
+
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <ul class="course">
+            <p>Computer science and technology</p>
+            <p>Computer engineering</p>
+            <p>Electrical Engineering</p>
+            <p>Data Science</p>
+        </ul>
+    </section>
+
+    <section id="admissions">
+        <h2>Admissions</h2>
+        <p>If you're interested in joining us, find out more about our admission process and requirements on our
+            Admissions page.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, please don't hesitate to reach out to us.</p>
+        <address>
+            Email: <a href="office@umit.sndt.ac.in">office@umit.sndt.ac.in</a><br>
+            Phone: +022-26606040<br>
+            Address: UMIT, SNDT Women's University, Juhu-Tara Road, Sir Vitthaldas Vidyavihar,
+            Santacruz(W), Mumbai 400049
+        </address>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Usha Mittal Institute of Technology</p>
+    </footer>
+
+    <script>
+        let mybutton = document.getElementById("myBtn");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        jQuery(document).ready(function () {
+            "use strict";
+            Demo.init();
+            Core.init();
+
+            $('.sidebar-menu > li').click(function (e) {
+                $(".active").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="UMIT_CHATBOT"
+      agent-id="aab75f7c-8b74-4bbe-9134-2e0a2f812b3a"
+      chat-icon="https://cdn.glitch.global/58a18c27-f54c-45fe-b9be-7ff51db0c20d/chatbot.png?v=1697605350148"
+      language-code="en"
+    ></df-messenger>
+    
+</body>
+</html>
